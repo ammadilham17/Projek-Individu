@@ -1,0 +1,199 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1c2430;
+  --muted: #5b6675;
+  --line: #d9dee5;
+  --accent: #1f6feb;
+  --danger: #c62828;
+  --pin: #fff7d6;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+h1 {
+  margin: 0.5rem 0 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 0.75rem 0 0.25rem;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  background: var(--surface);
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  min-height: 44px;
+}
+button.secondary {
+  background: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.form-error,
+.error {
+  color: var(--danger);
+  font-weight: 600;
+  margin: 0.5rem 0 0;
+}
+.error {
+  padding: 0.75rem;
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  background: #fdecea;
+}
+.loading {
+  padding: 0.75rem;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem;
+  text-align: center;
+}
+.stat strong {
+  display: block;
+  font-size: 1.6rem;
+}
+.stat span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.toolbar label {
+  margin-top: 0;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.note.pinned {
+  background: var(--pin);
+}
+.note h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.note-content {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.note small {
+  color: var(--muted);
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.tag {
+  background: #e8f0fe;
+  color: #174ea6;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.85rem;
+}
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+.btn-small {
+  padding: 0.4rem 0.7rem;
+  min-height: 40px;
+  font-size: 0.9rem;
+}
+.btn-danger {
+  background: var(--danger);
+}
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 600px) {
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+  .stats {
+    gap: 0.35rem;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+}

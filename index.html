@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Notes Organizer</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Digital Notes Organizer</h1>
+
+      <div id="loading" class="loading" hidden>Memuat catatan...</div>
+      <div id="error" class="error" role="alert" hidden></div>
+
+      <div id="stats" class="stats"></div>
+
+      <form id="note-form" class="card" novalidate>
+        <label for="title">Judul</label>
+        <input
+          id="title"
+          type="text"
+          maxlength="60"
+          placeholder="Judul catatan"
+        />
+
+        <label for="content">Isi catatan</label>
+        <textarea
+          id="content"
+          rows="4"
+          placeholder="Tulis isi catatan"
+        ></textarea>
+
+        <label for="tags">Tag (pisahkan dengan koma)</label>
+        <input id="tags" type="text" placeholder="sekolah, coding" />
+
+        <p id="form-error" class="form-error" role="alert"></p>
+
+        <div class="form-actions">
+          <button id="submit-btn" type="submit">Simpan catatan</button>
+          <button id="cancel-btn" type="button" class="secondary" hidden>
+            Batal edit
+          </button>
+        </div>
+      </form>
+
+      <section class="toolbar">
+        <div>
+          <label for="search">Cari</label>
+          <input id="search" type="search" placeholder="Cari judul atau isi" />
+        </div>
+        <div>
+          <label for="tag-filter">Tag</label>
+          <select id="tag-filter"></select>
+        </div>
+        <div>
+          <label for="sort">Urutkan</label>
+          <select id="sort">
+            <option value="newest">Terbaru</option>
+            <option value="oldest">Terlama</option>
+            <option value="title">Judul A-Z</option>
+          </select>
+        </div>
+      </section>
+
+      <p id="empty" class="empty" hidden></p>
+      <section id="notes-list" class="notes-grid"></section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
